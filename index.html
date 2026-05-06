@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WTF: What's The Fix | XO Founder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #000000;
+  --charcoal: #242424;
+  --white: #ffffff;
+  --cyan: #15E4E6;
+  --cyan-bg: rgba(21,228,230,0.07);
+  --gray-mid: #868586;
+  --gray-light: #E5E5E5;
+  --off-white: #F7F7F5;
+  --display: 'Barlow Condensed', sans-serif;
+  --sans: 'Barlow', sans-serif;
+  --max: 680px;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* NAV */
+nav.topnav {
+  border-bottom: 1px solid var(--gray-light);
+  padding: 22px 0;
+}
+nav.topnav .page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+}
+.nav-sub {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+}
+
+/* HERO */
+.hero { padding: 80px 0 72px; }
+.hero-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  display: block;
+  margin-bottom: 28px;
+}
+.hero-h1 {
+  font-family: var(--display);
+  font-size: clamp(72px, 14vw, 108px);
+  font-weight: 800;
+  line-height: 0.92;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.hero-h1 .accent { color: var(--cyan); }
+.hero-expand {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  display: block;
+  margin-bottom: 40px;
+}
+.hero-deck {
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--charcoal);
+  max-width: 500px;
+  margin-bottom: 16px;
+}
+.hero-deck strong { font-weight: 600; color: var(--black); }
+.hero-note {
+  font-size: 14px;
+  color: var(--gray-mid);
+  margin-bottom: 48px;
+  line-height: 1.6;
+  max-width: 460px;
+}
+.cta-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 18px 44px;
+  border: 2px solid var(--black);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1;
+}
+.btn:hover { background: var(--cyan); border-color: var(--cyan); color: var(--black); }
+.btn-cyan { background: var(--cyan); border-color: var(--cyan); color: var(--black); }
+.btn-cyan:hover { background: var(--black); border-color: var(--black); color: var(--white); }
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 36px;
+  border: 1px solid var(--gray-light);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.btn-outline:hover { border-color: var(--black); }
+
+/* RULES */
+hr.full { border: none; border-top: 1px solid var(--gray-light); margin: 72px 0; }
+.cyan-bar { width: 40px; height: 3px; background: var(--cyan); margin-bottom: 24px; }
+
+/* PROOF BAR */
+.proof-bar {
+  background: var(--black);
+  margin-bottom: 72px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+@media (max-width: 540px) {
+  .proof-bar { grid-template-columns: 1fr; }
+}
+.proof-score {
+  background: var(--cyan);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  text-align: center;
+}
+.proof-nums {
+  font-family: var(--display);
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--black);
+  letter-spacing: -0.02em;
+}
+.proof-nums-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.45);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+.proof-copy { padding: 36px 36px 36px 32px; display: flex; flex-direction: column; justify-content: center; }
+.proof-headline {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.proof-body {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.proof-quote-text {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--cyan);
+  line-height: 1.55;
+}
+.proof-quote-attr {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin-top: 8px;
+}
+
+/* SECTION LABELS */
+.kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  display: block;
+  margin-bottom: 18px;
+}
+h2.sh {
+  font-family: var(--display);
+  font-size: clamp(32px, 6vw, 46px);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+h2.sh .accent { color: var(--cyan); }
+
+p.bc {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+p.bc:last-child { margin-bottom: 0; }
+p.bc strong { font-weight: 600; color: var(--black); }
+
+/* PULL QUOTE */
+.pull {
+  border-left: 3px solid var(--cyan);
+  padding: 4px 0 4px 28px;
+  margin: 44px 0;
+}
+.pull-text {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.pull-attr {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+}
+.pull-attr span {
+  display: block;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* STEPS */
+.steps { margin: 44px 0; }
+.step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0 20px;
+  margin-bottom: 44px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid var(--gray-light);
+  align-items: start;
+}
+.step:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.step-num {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cyan);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-top: 4px;
+}
+.step-name {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--black);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+.step-body { font-size: 16px; font-weight: 300; color: var(--charcoal); line-height: 1.7; }
+.step-body strong { font-weight: 600; color: var(--black); }
+
+/* PILLARS — FLIP CARDS */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin: 28px 0;
+}
+@media (max-width: 560px) { .pillars { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 360px) { .pillars { grid-template-columns: repeat(2, 1fr); } }
+
+.pillar {
+  aspect-ratio: 1 / 1;
+  perspective: 600px;
+  cursor: pointer;
+}
+.pillar-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease;
+}
+.pillar:hover .pillar-inner,
+.pillar.flipped .pillar-inner {
+  transform: rotateY(180deg);
+}
+.pillar-front,
+.pillar-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+}
+.pillar-front {
+  background: var(--cyan);
+}
+.pillar-label {
+  font-family: var(--display);
+  font-size: clamp(13px, 2vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: 1.2;
+}
+.pillar-back {
+  background: var(--black);
+  transform: rotateY(180deg);
+  padding: 10px;
+}
+.pillar-q {
+  font-size: clamp(9px, 1.3vw, 11px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.45;
+  text-align: left;
+}
+.pillar-q + .pillar-q {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* TESTIMONIAL */
+.testi {
+  background: var(--off-white);
+  padding: 32px 36px;
+  margin: 44px 0;
+  border-left: 3px solid var(--cyan);
+}
+.testi-text {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.testi-attr {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+}
+.testi-attr span {
+  display: block;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* PRICE */
+.price-wrap { border: 1px solid var(--gray-light); margin: 44px 0; }
+.price-head {
+  background: var(--black);
+  padding: 28px 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.price-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 6px;
+}
+.price-amount {
+  font-family: var(--display);
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--white);
+}
+.price-member-tag { text-align: right; }
+.price-member-amount {
+  font-family: var(--display);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--cyan);
+  line-height: 1;
+}
+.price-member-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  margin-top: 6px;
+  letter-spacing: 0.08em;
+}
+.price-body { padding: 28px 32px; }
+.price-list { list-style: none; margin-bottom: 20px; }
+.price-list li {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--charcoal);
+  padding: 9px 0;
+  border-bottom: 1px solid var(--gray-light);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+.price-list li:last-child { border-bottom: none; }
+.price-list li::before { content: '—'; color: var(--cyan); font-weight: 600; flex-shrink: 0; }
+.price-footnote {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--gray-mid);
+  line-height: 1.55;
+  font-style: italic;
+}
+.placeholder {
+  background: rgba(255,210,0,0.15);
+  border: 1px dashed rgba(180,140,0,0.4);
+  padding: 1px 6px;
+  font-size: 12px;
+  color: #7a5c00;
+  font-family: monospace;
+  font-style: normal;
+}
+
+/* OBJECTION */
+.objection {
+  background: var(--cyan-bg);
+  border-left: 3px solid var(--cyan);
+  padding: 28px 32px;
+  margin: 44px 0;
+}
+.obj-q {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--black);
+  letter-spacing: 0.03em;
+  margin-bottom: 14px;
+}
+.obj-a { font-size: 16px; font-weight: 300; color: var(--charcoal); line-height: 1.75; }
+.obj-a strong { font-weight: 600; color: var(--black); }
+
+/* NOT FOR */
+.not-for { background: var(--off-white); padding: 28px 32px; margin: 32px 0; }
+.not-list { list-style: none; margin-top: 8px; }
+.not-list li {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--charcoal);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--gray-light);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+.not-list li:last-child { border-bottom: none; }
+.not-list li::before { content: '×'; font-weight: 700; color: var(--gray-mid); flex-shrink: 0; }
+
+/* FINAL CTA */
+.final-cta {
+  background: var(--black);
+  padding: 80px 28px;
+  text-align: center;
+  margin-top: 72px;
+}
+.final-cta-h {
+  font-family: var(--display);
+  font-size: clamp(38px, 7vw, 56px);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+.final-cta-h .accent { color: var(--cyan); }
+.final-cta-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+.final-cta-note {
+  margin-top: 20px;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.35);
+}
+.final-cta-note a { color: var(--cyan); text-decoration: underline; }
+.final-cta-q {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+}
+.final-cta-q a { color: rgba(255,255,255,0.5); }
+
+/* FOOTER */
+footer {
+  background: var(--off-white);
+  border-top: 1px solid var(--gray-light);
+  padding: 28px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--gray-mid);
+  letter-spacing: 0.06em;
+}
+footer a { color: var(--gray-mid); text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="page">
+    <a href="https://xofounder.com" class="nav-logo">XO Founder</a>
+    <span class="nav-sub">Full-day workshop · 8 seats</span>
+  </div>
+</nav>
+
+<div class="page">
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-kicker">Virtual · Full day · 8 seats</span>
+  <h1 class="hero-h1">
+    <span class="accent">WTF:</span><br>
+    What's<br>
+    The Fix?
+  </h1>
+  <p class="hero-deck">
+    Your best offer has a blind spot.<br>
+    <strong>You can't see it — because you built it.</strong>
+  </p>
+  <p class="hero-note">
+    One day, 10 to 4. Fresh eyes. A custom action plan you'll actually follow through on.<br>
+    We measure clarity before and after. Because proof matters more than promises.
+  </p>
+
+  <div class="cta-row">
+    <a href="#register" class="btn">Claim Your Seat</a>
+    <a href="#how-it-works" class="btn-outline">See How It Works</a>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-score">
+    <div class="proof-nums">4.4<br>→ 8.9</div>
+    <div class="proof-nums-label">Average clarity<br>10-point scale<br>one day</div>
+  </div>
+  <div class="proof-copy">
+    <div class="proof-headline">Average clarity jump.<br>Every single participant.</div>
+    <p class="proof-body">
+      Before the workshop, you score your clarity on the offer out of 10.
+      After, you score it again. 4.4 to 8.9 is the average —
+      across every founder who has sat in this room.
+      Not a range. Not a best case. The average.
+      And not one participant finished below where they started.
+    </p>
+    <div class="proof-quote-text">
+      "Literally run to this. It's amazing."
+    </div>
+    <div class="proof-quote-attr">Jennifer Spivak · Founder, The Facebook Ads Girls</div>
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<section>
+  <div class="cyan-bar"></div>
+  <span class="kicker">Why you're here</span>
+  <h2 class="sh">You know the offer is good.<br>That's what makes it <span class="accent">maddening.</span></h2>
+
+  <p class="bc">You've proven yourself. You're not guessing at your value. You have clients, a track record, and revenue that says you know what you're doing. And yet this one offer — the one that should be a no-brainer — keeps underperforming in ways you can't fully explain.</p>
+
+  <p class="bc">You've already tinkered. Tweaked the positioning. Adjusted the price. Rewrote the page. None of it moved the needle enough, because none of it named the actual problem.</p>
+
+  <p class="bc"><strong>You're too close to it.</strong> The offer lives inside your head where it makes complete sense. What's obvious to you is invisible to the person who needs to buy it. That gap is costing you.</p>
+
+  <div class="pull">
+    <p class="pull-text">"She solved a problem that had been plaguing me for years. How? She saw my blind spot. She shared an idea — one I just could not see on my own, even though I do this kind of problem-solving with people myself."</p>
+    <p class="pull-attr">Beth Grant<span>Marketing Strategist</span></p>
+  </div>
+</section>
+
+<hr class="full">
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="cyan-bar"></div>
+  <span class="kicker">The mechanism</span>
+  <h2 class="sh">The WTF Check™ starts<br>working before you arrive.</h2>
+
+  <p class="bc">WTF is a full-day virtual workshop, 10 to 4 with a lunch break. Maximum eight founders. Before you log on, you complete the proprietary WTF Check™ — an assessment that runs your offer through five business pillars. Most founders report clarity starting to shift before the workshop even begins.</p>
+
+  <p class="bc">The prep is designed to surface what you've been too close — or too busy — to see. By the time we gather, we're already in motion.</p>
+
+  <div class="steps">
+
+    <div class="step">
+      <span class="step-num">01 /</span>
+      <div>
+        <p class="step-name">Complete the WTF Check™</p>
+        <p class="step-body">A proprietary prep assessment built around 5 business pillars. You examine your offer from every angle — pricing, positioning, thought leadership, sales, mindset — before you arrive. This is where blind spots begin to surface. <strong>Founders report clarity shifting before the workshop even starts.</strong></p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">02 /</span>
+      <div>
+        <p class="step-name">Full-day workshop · Hot seat format</p>
+        <p class="step-body">Eight founders spend a full day together — every set of eyes on every problem, every angle interrogated, every stuck point named. Hot seat format means your offer gets full, focused attention from the room. <strong>Peer-level input with Carolyn's facilitation produces solutions that private sessions rarely reach.</strong></p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-num">03 /</span>
+      <div>
+        <p class="step-name">Walk out with your WTF Strategy™</p>
+        <p class="step-body">You leave with a custom action plan — co-created and stress-tested in the room — specific to your offer, your positioning, your next move. The sequence is clear. <strong>You'll follow through because you built it yourself, with eight people who pushed on it until it held.</strong></p>
+      </div>
+    </div>
+
+  </div>
+
+  <span class="kicker">The 5 pillars of the WTF Check™ — tap to explore</span>
+  <div class="pillars">
+
+    <div class="pillar" onclick="this.classList.toggle('flipped')">
+      <div class="pillar-inner">
+        <div class="pillar-front">
+          <span class="pillar-label">Mindset &amp; Priority</span>
+        </div>
+        <div class="pillar-back">
+          <p class="pillar-q">Is a belief about your worth keeping clients from moving in?</p>
+          <p class="pillar-q">What are you tolerating that's quietly draining momentum?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar" onclick="this.classList.toggle('flipped')">
+      <div class="pillar-inner">
+        <div class="pillar-front">
+          <span class="pillar-label">Business Model</span>
+        </div>
+        <div class="pillar-back">
+          <p class="pillar-q">Is the price point right — or are you over or undercharging?</p>
+          <p class="pillar-q">Where does this offer fit in your value stream?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar" onclick="this.classList.toggle('flipped')">
+      <div class="pillar-inner">
+        <div class="pillar-front">
+          <span class="pillar-label">Thought Leadership</span>
+        </div>
+        <div class="pillar-back">
+          <p class="pillar-q">Are you positioned as the obvious expert — or just another option?</p>
+          <p class="pillar-q">What IP are you sitting on that you haven't named yet?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar" onclick="this.classList.toggle('flipped')">
+      <div class="pillar-inner">
+        <div class="pillar-front">
+          <span class="pillar-label">Marketing Strategy</span>
+        </div>
+        <div class="pillar-back">
+          <p class="pillar-q">Is your message landing with the right people in the right places?</p>
+          <p class="pillar-q">Where are you showing up that isn't moving the needle?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar" onclick="this.classList.toggle('flipped')">
+      <div class="pillar-inner">
+        <div class="pillar-front">
+          <span class="pillar-label">Sales Strategy</span>
+        </div>
+        <div class="pillar-back">
+          <p class="pillar-q">Who's getting lost before the conversation even starts?</p>
+          <p class="pillar-q">Is your sales page doing its job — or doing it wrong?</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="bc" style="font-size:13px; color:var(--gray-mid); margin-top:12px;">These are representative questions — the WTF Check™ generates a full diagnostic set specific to your offer.</p>
+
+</section>
+
+<div class="testi">
+  <p class="testi-text">"One day with Carolyn was worth more to me than a multi-day retreat. I don't like to waste time and she moves quickly and boldly. I left ready to put her recommendations into action."</p>
+  <p class="testi-attr">Michelle McCartan<span>Founder, Forward College Counseling</span></p>
+</div>
+
+<hr class="full">
+
+<!-- PRICE -->
+<section id="pricing">
+  <div class="cyan-bar"></div>
+  <span class="kicker">Investment</span>
+
+  <div class="price-wrap">
+    <div class="price-head">
+      <div>
+        <p class="price-title">WTF: What's The Fix?</p>
+        <div class="price-amount">$997</div>
+      </div>
+    </div>
+    <div class="price-body">
+      <ul class="price-list">
+        <li>Full-day virtual workshop, 10am–4pm with lunch break</li>
+        <li>WTF Check™ prep assessment — included, required before arrival</li>
+        <li>Custom WTF Strategy™ action plan, completed same day</li>
+        <li>Maximum 8 participants — enough peer input, enough room to breathe</li>
+        <li>Investment applicable toward BEYOND, Carolyn's 90-day engagement</li>
+      </ul>
+      <p class="price-footnote">First session: June 30, 2026 · 10am–4pm Eastern (lunch 12:30–1:30). When the eight seats fill, they're gone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTION -->
+<div class="objection">
+  <p class="obj-q">"Will I get enough attention in a group?"</p>
+  <p class="obj-a">Yes — because the format is built around attention. Hot seat means the full room is working on your problem: <strong>eight founders, each with their own expertise and vantage point</strong>, plus Carolyn's facilitation. The group doesn't dilute the focus. It multiplies the output. You'll walk away with angles you never would have surfaced alone — or in a private session where all the thinking stays inside one head.</p>
+</div>
+
+<hr class="full">
+
+<div class="testi">
+  <p class="testi-text">"One session with Carolyn and my year-long struggle is over. She not only knows what's missing in my offers — she knows what will work for me. She'll say: 'But you'll never do that because it doesn't fit your personality. Why don't you do this instead?' And suddenly everything falls into place."</p>
+  <p class="testi-attr">Nika Stewart<span>CEO, Streambank Media</span></p>
+</div>
+
+<div class="testi">
+  <p class="testi-text">"I liked the fact that there were a number of things I was already thinking that got confirmed. That was very valuable — it helped me zero in on what actually needs to be addressed versus what really doesn't."</p>
+  <p class="testi-attr">Jennifer Peek<span>Participant, WTF Workshop</span></p>
+</div>
+
+<hr class="full">
+
+<!-- ABOUT -->
+<section>
+  <div class="cyan-bar"></div>
+  <span class="kicker">About Carolyn Herfurth</span>
+  <h2 class="sh">She sees the offer.<br>And the thing <span class="accent">behind</span> the offer.</h2>
+
+  <p class="bc">Carolyn Herfurth is a business strategist and founder who works as a strategic thought partner for expertise-driven founders — consultants, coaches, and thought leaders typically earning in the mid-six-figures to $1M range.</p>
+  <p class="bc">Over 30 years across business design, franchising, licensing, and sales, she's developed a pattern-recognition system that consistently surfaces what founders can't see themselves. She co-founded the Impostor Syndrome Institute, which expanded to 26 countries. She's not a coach in the traditional sense. She's the person you call when everything is working and one specific thing isn't — and you need fresh eyes that will tell you exactly what they see.</p>
+  <p class="bc"><strong>Average client ROI, measured against her fee, within the first year: 11x.</strong></p>
+  <p class="bc">WTF is the entry point. It's where the trapped value starts to surface.</p>
+
+  <div class="testi" style="margin-top: 32px;">
+    <p class="testi-text">"I'm writing this from the middle of the ocean — on a cruise — where for the first time in probably five years, I didn't spend my entire vacation working. Thanks to Carolyn helping me create a business model that not only doesn't kill me, but that I actually like."</p>
+    <p class="testi-attr">Jennifer Spivak<span>Founder, The Facebook Ads Girls</span></p>
+  </div>
+</section>
+
+<hr class="full">
+
+<!-- NOT FOR -->
+<section>
+  <div class="cyan-bar"></div>
+  <span class="kicker">This is not for everyone</span>
+  <h2 class="sh">Not the right fit?<br><span class="accent">Better to know now.</span></h2>
+
+  <p class="bc">WTF works because the founders in the room are at roughly the same level. Peer-level input only works when there are actual peers. Here's who shouldn't register:</p>
+
+  <div class="not-for">
+    <ul class="not-list">
+      <li>You're below $100K in annual revenue. The offer design problems at your stage are different. This isn't built for them.</li>
+      <li>Your primary revenue comes from physical products. WTF is built for service-based expertise offers.</li>
+      <li>You want every minute of attention to yourself. Eight founders means eight hot seats. You're a participant, not the only one.</li>
+      <li>You haven't committed to completing the WTF Check™ before the workshop. Showing up without the prep defeats the methodology.</li>
+    </ul>
+  </div>
+
+  <p class="bc" style="margin-top: 24px;">If you want completely private attention — no room, no peers — that's what <a href="https://xofounder.com" style="color:var(--cyan); font-weight:500; text-decoration:underline;">BEYOND</a> is for.</p>
+</section>
+
+</div><!-- /page -->
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="register">
+  <h2 class="final-cta-h">
+    Eight seats.<br>
+    You know if you're<br>
+    <span class="accent">one of them.</span>
+  </h2>
+  <p class="final-cta-sub">
+    June 30, 2026 &nbsp;·&nbsp; 10am–4pm Eastern &nbsp;·&nbsp; Virtual<br>
+    Lunch break 12:30–1:30. Prep required. Action plan guaranteed.
+  </p>
+  <a href="#" class="btn btn-cyan">Register Now — $997</a>
+  <p class="final-cta-q">
+    Questions first? <a href="mailto:carolyn@carolynherfurth.com">Email Carolyn directly.</a>
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Stratica, Inc. &nbsp;·&nbsp; <a href="https://carolynherfurth.com/privacy-policy">Privacy Policy</a> </p>
+</footer>
+
+</body>
+</html>
