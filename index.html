@@ -989,15 +989,15 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
   <div class="proof-score">
     <div style="display:flex; flex-direction:column; align-items:center; gap:12px; width:100%;">
       <div style="width:100%; text-align:center;">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(0,0,0,0.5); margin-bottom:4px;">Before</div>
+        <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; color:rgba(0,0,0,0.7); margin-bottom:4px;">Before</div>
         <div class="proof-nums">4.4</div>
       </div>
-      <div id="proof-arrow" style="font-family:var(--display); font-size:28px; font-weight:800; color:var(--black); line-height:1; opacity:0; transition:opacity 0.4s ease;">↓</div>
+      <div id="proof-arrow" style="font-family:var(--display); font-size:52px; font-weight:800; color:var(--black); line-height:0.8; opacity:0; transition:opacity 0.4s ease;">↓</div>
       <div style="width:100%; text-align:center;">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(0,0,0,0.5); margin-bottom:4px;">After</div>
+        <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; color:rgba(0,0,0,0.7); margin-bottom:4px;">After</div>
         <div class="proof-nums" id="proof-after">0.0</div>
       </div>
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(0,0,0,0.4); margin-top:4px;">Self-reported average · 10-point scale</div>
+      <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(0,0,0,0.65); margin-top:8px;">Self-reported average · 10-point scale</div>
     </div>
   </div>
   <div class="proof-copy">
@@ -1016,11 +1016,11 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
 
   <p class="bc">You've proven yourself. You're not guessing at your value. You have clients, a track record, and revenue that says you know what you're doing. And yet this one offer — the one that should be a no-brainer — keeps underperforming in ways you can't fully explain.</p>
 
-  <p class="bc">You've already tinkered. Tweaked the positioning. Adjusted the price. Rewrote the page. None of it moved the needle enough, because none of it named the actual problem.</p>
+  <p class="bc">You've already tinkered. Tweaked the positioning. Adjusted the price. Rewrote the page. None of it named the actual problem.</p>
 
   <p class="bc"><strong>You're too close to it.</strong> The offer lives inside your head where it makes complete sense. What's obvious to you is invisible to the person who needs to buy it. That gap is costing you.</p>
 
-  <p class="bc" style="font-style:italic; color:var(--charcoal);">Maybe it's a new offer that isn't landing the way you expected. Maybe it's one that used to work and quietly stopped. Maybe it's an offer you haven't launched yet because something feels off and you can't name it.</p>
+  <p class="bc" style="font-style:italic; color:var(--charcoal);">Maybe it's a new offer that isn't landing the way you expected. Maybe it's one that used to work and then just... stopped. Maybe it's an offer you haven't launched yet because something feels off and you can't name it.</p>
 
   <div class="testi">
   <p class="testi-bold">She solved a problem that had been plaguing me for years.</p>
@@ -1427,12 +1427,20 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
         observer.disconnect();
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 });
 
-  document.addEventListener('DOMContentLoaded', function() {
+  // Try immediately if DOM already loaded, else wait
+  function init() {
     var bar = document.querySelector('.proof-bar');
-    if (bar) observer.observe(bar);
-  });
+    if (bar) {
+      observer.observe(bar);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>
 </body>
