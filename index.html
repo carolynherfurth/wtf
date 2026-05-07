@@ -340,7 +340,7 @@ p.bc strong { font-weight: 600; color: var(--black); }
 .pillars {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
+  gap: 0;
   margin: 28px 0;
 }
 @media (max-width: 560px) { .pillars { grid-template-columns: repeat(3, 1fr); } }
@@ -350,6 +350,7 @@ p.bc strong { font-weight: 600; color: var(--black); }
   aspect-ratio: 4 / 5;
   perspective: 600px;
   cursor: pointer;
+  border: 3px solid #ffffff;
 }
 .pillar-inner {
   position: relative;
@@ -454,8 +455,8 @@ p.bc strong { font-weight: 600; color: var(--black); }
 .dark-section .step-body strong { color: var(--white); }
 .dark-section .step { border-bottom-color: var(--cyan); }
 .dark-section .cyan-bar { background: var(--cyan); }
-.dark-section .pillars { border: 1px solid rgba(255,255,255,0.1); }
-.dark-section .pillar { border-right-color: rgba(255,255,255,0.1); }
+.dark-section .pillars { border: none; }
+.dark-section .pillar { border-color: #ffffff; }
 .dark-section .pillar-back { background: var(--cyan); }
 .dark-section .pillar-q { color: var(--black); }
 .dark-section .pillar-q + .pillar-q { border-top-color: rgba(0,0,0,0.15); }
