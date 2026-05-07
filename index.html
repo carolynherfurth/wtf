@@ -969,7 +969,7 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
 
 <!-- HERO -->
 <section class="hero">
-  <p class="hero-offer">Your best offer has a blind spot.<br>You can't see it — because you built it.</p>
+  <p class="hero-offer">You've got a no-brainer offer that's stalled out.<br>But the solution is in your $*@% blind spot.</p>
   <h1 class="hero-h1">
     <span class="accent">WTF:</span><br>
     What's<br>
@@ -977,7 +977,7 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
   </h1>
   <p class="hero-note">You've already tinkered. It should be working. But tinkering from the inside doesn't fix a blind spot.</p>
   <p class="hero-note">This workshop is where you find out why — and exactly what your offer needs to finally sell the way you know it should.</p>
-  <p class="hero-note">One day. Fresh eyes. An action plan custom-built to release the trapped value.</p>
+  <p class="hero-note">One day. Fresh eyes. An action plan for what's actually in the way.</p>
   <div class="cta-row">
     <a href="https://book.stripe.com/cNi4gz5lEgW9bVF1PX0Jq05" target="_blank" rel="noopener" class="btn">Claim Your Seat</a>
     <a href="#how-it-works" class="btn-outline">See How It Works</a>
@@ -992,10 +992,10 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
         <div style="font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(0,0,0,0.5); margin-bottom:4px;">Before</div>
         <div class="proof-nums">4.4</div>
       </div>
-      <div style="font-family:var(--display); font-size:28px; font-weight:800; color:var(--black); line-height:1;">↓</div>
+      <div id="proof-arrow" style="font-family:var(--display); font-size:28px; font-weight:800; color:var(--black); line-height:1; opacity:0; transition:opacity 0.4s ease;">↓</div>
       <div style="width:100%; text-align:center;">
         <div style="font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(0,0,0,0.5); margin-bottom:4px;">After</div>
-        <div class="proof-nums">8.9</div>
+        <div class="proof-nums" id="proof-after">0.0</div>
       </div>
       <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(0,0,0,0.4); margin-top:4px;">Self-reported average · 10-point scale</div>
     </div>
@@ -1041,7 +1041,7 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
 
   <p class="bc">WTF is a full-day virtual workshop, 10 to 4. Maximum six founders. Before you log on, you complete the proprietary WTF Check™ — an assessment that runs your offer through five business pillars. Most founders report clarity starting to shift before the workshop even begins.</p>
 
-  <p class="bc">The prep is designed to surface what you've been too close — or too busy — to see. By the time we gather, we're already in motion.</p>
+  <p class="bc">The prep is designed to find what you've been too close — or too busy — to see. By the time we gather, we're already in motion.</p>
 
   <div class="steps">
 
@@ -1058,7 +1058,7 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
             </div>
             <div class="sg-question">
               <div class="sg-question-label">What you're doing before you arrive</div>
-              <div class="sg-question-text" style="font-size:14px; color:var(--charcoal); line-height:1.6;">A 9-part inventory that runs your offer through each of the 5 pillars — from the problem it solves, to how it fits your value stream, to the mindset blocks that may be quietly in the way.</div>
+              <div class="sg-question-text" style="font-size:14px; color:var(--charcoal); line-height:1.6;">A 9-part inventory that runs your offer through each of the 5 pillars — from the problem it solves, to how it fits your value stream, to the beliefs about your own worth that may be doing the selling before you open your mouth — and not in a good way.</div>
             </div>
             <div style="margin-top:14px; padding-top:14px; border-top:1px solid #e0e0d8; display:flex; align-items:center; justify-content:space-between;">
               <span style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray-mid);">Sent to you upon registration</span>
@@ -1073,7 +1073,7 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
       <span class="step-num">02/</span>
       <div>
         <p class="step-name">Full-day workshop · Hot seat format</p>
-        <p class="step-body">Six founders. One day. Each participant gets two passes in the hot seat — a morning session where Carolyn shares her initial read on your WTF Check™, and an afternoon session where you go deeper and build the fix. She directs the room. Peer input comes when she calls for it. And while you're not in the hot seat, you're watching someone else's — which means you're solving your own problems even when it's not your turn. <strong>The combination of Carolyn's pattern recognition and peer-level pressure-testing produces solutions that the DIY effort rarely reaches.</strong></p>
+        <p class="step-body">Six founders. One day. Each participant gets two passes in the hot seat — a morning session where Carolyn shares her initial read on your WTF Check™, and an afternoon session where you go deeper and build the fix. She directs the room. Peer input comes when she calls for it. And while you're not in the hot seat, you're watching someone else's — which means you're solving your own problems even when it's not your turn. <strong>Carolyn reads your offer, asks the questions you hadn't considered, and builds the fix with you. The room pressure-tests it. That's the order.</strong></p>
 
         <div class="step-graphic">
           <div style="border-radius:8px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.18); font-family:var(--sans);">
@@ -1174,7 +1174,7 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
         </div>
         <div class="pillar-back">
           <p class="pillar-q">Is a belief about your worth keeping clients from moving in?</p>
-          <p class="pillar-q">What are you tolerating that's quietly draining momentum?</p>
+          <p class="pillar-q">What are you putting up with that's costing you more than you think?</p>
         </div>
       </div>
     </div>
@@ -1383,5 +1383,57 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
   <p>© 2026 Stratica, Inc. &nbsp;·&nbsp; <a href="https://carolynherfurth.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></p>
 </footer>
 
+
+<script>
+(function() {
+  var animated = false;
+  var target = 8.9;
+  var duration = 1500;
+
+  function countUp() {
+    if (animated) return;
+    animated = true;
+
+    // Fade in arrow first
+    setTimeout(function() {
+      var arrow = document.getElementById('proof-arrow');
+      if (arrow) arrow.style.opacity = '1';
+    }, 300);
+
+    // Count up the after number
+    var start = null;
+    var el = document.getElementById('proof-after');
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      // Ease out
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var current = ease * target;
+      if (el) el.textContent = current.toFixed(1);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        if (el) el.textContent = '8.9';
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Trigger when proof bar scrolls into view
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        countUp();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var bar = document.querySelector('.proof-bar');
+    if (bar) observer.observe(bar);
+  });
+})();
+</script>
 </body>
 </html>
