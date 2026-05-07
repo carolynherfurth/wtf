@@ -118,8 +118,7 @@ nav.topnav .page {
   margin-bottom: 44px;
 }
 .cta-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-.cta-row .btn, .cta-row .btn-outline { min-width: 220px; text-align: center; }
-
+.cta-row .btn, .cta-row 
 /* BUTTONS */
 .btn {
   display: inline-block;
@@ -136,6 +135,9 @@ nav.topnav .page {
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
   line-height: 1;
+  min-width: 220px;
+  text-align: center;
+  box-sizing: border-box;
 }
 .btn:hover { background: var(--cyan); border-color: var(--cyan); color: var(--black); }
 .btn-cyan { background: var(--cyan); border-color: var(--cyan); color: var(--black); }
@@ -146,14 +148,18 @@ nav.topnav .page {
   color: var(--black);
   font-family: var(--sans);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
   padding: 22px 56px;
-  border: 1px solid var(--gray-light);
+  border: 2px solid var(--gray-light);
   cursor: pointer;
   transition: border-color 0.15s;
+  min-width: 220px;
+  text-align: center;
+  line-height: 1;
+  box-sizing: border-box;
 }
 .btn-outline:hover { border-color: var(--black); }
 
