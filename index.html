@@ -695,6 +695,13 @@ p.bc strong { font-weight: 600; color: var(--black); }
   border: 3px solid var(--cyan);
   border-radius: 2px;
 }
+.testi-bold {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
 .testi-text {
   font-size: 18px;
   font-style: italic;
@@ -806,7 +813,8 @@ p.bc strong { font-weight: 600; color: var(--black); }
   letter-spacing: 0.03em;
   margin-bottom: 14px;
 }
-.obj-a { font-size: 17px; font-weight: 400; color: var(--black); line-height: 1.75; }
+.obj-a { font-size: 17px; font-weight: 400; color: var(--black); line-height: 1.75; margin-bottom: 16px; }
+.obj-a:last-child { margin-bottom: 0; }
 .obj-a strong { font-weight: 600; color: var(--black); }
 
 /* NOT FOR */
@@ -956,7 +964,7 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
   <span class="kicker">The mechanism</span>
   <h2 class="sh">The WTF Check™ starts<br>working <span class="accent">before</span> you arrive.</h2>
 
-  <p class="bc">WTF is a full-day virtual workshop, 10 to 4 with a lunch break. Maximum six founders. Before you log on, you complete the proprietary WTF Check™ — an assessment that runs your offer through five business pillars. Most founders report clarity starting to shift before the workshop even begins.</p>
+  <p class="bc">WTF is a full-day virtual workshop, 10 to 4. Maximum six founders. Before you log on, you complete the proprietary WTF Check™ — an assessment that runs your offer through five business pillars. Most founders report clarity starting to shift before the workshop even begins.</p>
 
   <p class="bc">The prep is designed to surface what you've been too close — or too busy — to see. By the time we gather, we're already in motion.</p>
 
@@ -1006,7 +1014,7 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
               <div style="font-size:11px; color:rgba(255,255,255,0.35);">7 participants</div>
             </div>
             <!-- Zoom grid -->
-            <div style="background:#2d2d2d; padding:10px; display:grid; grid-template-columns:repeat(3,1fr); gap:6px;">
+            <div style="background:#2d2d2d; padding:10px; display:grid; grid-template-columns:repeat(4,1fr); gap:6px;">
               <!-- Carolyn tile -->
               <div style="background:#1a1a1a; border-radius:6px; aspect-ratio:4/3; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; position:relative; border:1px solid #444;">
                 <div style="width:38px; height:38px; border-radius:50%; background:#555; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:#ccc; letter-spacing:0.04em;">CH</div>
@@ -1150,13 +1158,14 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
 </section>
 
 <div class="testi">
+  <p class="testi-bold">One day with Carolyn was worth more to me than a multi-day retreat.</p>
+  <p class="testi-text">"One day with Carolyn was worth more to me than a multi-day retreat. I don't like to waste time and she moves quickly and boldly. I left ready to put her recommendations into action."</p>
   <div class="testi-header">
     <div class="testi-avatar">MM</div>
     <div class="testi-attr-wrap">
       <p class="testi-attr">Michelle McCartan<span>Founder, Forward College Counseling</span></p>
     </div>
   </div>
-  <p class="testi-text">"One day with Carolyn was worth more to me than a multi-day retreat. I don't like to waste time and she moves quickly and boldly. I left ready to put her recommendations into action."</p>
 </div>
 
 
@@ -1181,7 +1190,7 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
         <li>Custom WTF Strategy™ action plan, completed same day</li>
         <li>Maximum 6 participants — two hot seat passes each, Carolyn's eyes on your offer, peer input when she calls for it</li>
       </ul>
-      <p class="price-footnote">June 30, 2026 · 10am–4pm Eastern (lunch 12:30–1:30). When the six seats fill, they're gone.</p>
+      <p class="price-footnote">June 30, 2026 · 10am–4pm Eastern. When the six seats fill, they're gone.</p>
     </div>
   </div>
 </section>
@@ -1201,23 +1210,25 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
 
 
 <div class="testi">
+  <p class="testi-bold">One session with Carolyn and my year-long struggle is over.</p>
+  <p class="testi-text">"One session with Carolyn and my year-long struggle is over. She not only knows what's missing in my offers — she knows what will work for me. She'll say: 'But you'll never do that because it doesn't fit your personality. Why don't you do this instead?' And suddenly everything falls into place."</p>
   <div class="testi-header">
     <div class="testi-avatar">NS</div>
     <div class="testi-attr-wrap">
       <p class="testi-attr">Nika Stewart<span>CEO, Streambank Media</span></p>
     </div>
   </div>
-  <p class="testi-text">"One session with Carolyn and my year-long struggle is over. She not only knows what's missing in my offers — she knows what will work for me. She'll say: 'But you'll never do that because it doesn't fit your personality. Why don't you do this instead?' And suddenly everything falls into place."</p>
 </div>
 
 <div class="testi">
+  <p class="testi-bold">It helped me zero in on what actually needs to be addressed.</p>
+  <p class="testi-text">"I liked the fact that there were a number of things I was already thinking that got confirmed. That was very valuable — it helped me zero in on what actually needs to be addressed versus what really doesn't."</p>
   <div class="testi-header">
     <div class="testi-avatar">JP</div>
     <div class="testi-attr-wrap">
       <p class="testi-attr">Jennifer Peek<span>Founder, Peek Advisory Group</span></p>
     </div>
   </div>
-  <p class="testi-text">"I liked the fact that there were a number of things I was already thinking that got confirmed. That was very valuable — it helped me zero in on what actually needs to be addressed versus what really doesn't."</p>
 </div>
 
 
@@ -1239,13 +1250,14 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
   </div>
 
   <div class="testi" style="margin-top: 32px;">
+    <p class="testi-bold">For the first time in five years, I didn't spend my entire vacation working.</p>
+    <p class="testi-text">"I'm writing this from the middle of the ocean — on a cruise — where for the first time in probably five years, I didn't spend my entire vacation working. Thanks to Carolyn helping me create a business model that not only doesn't kill me, but that I actually like."</p>
     <div class="testi-header">
       <div class="testi-avatar">JS</div>
       <div class="testi-attr-wrap">
         <p class="testi-attr">Jennifer Spivak<span>Founder, The Ads Girls</span></p>
       </div>
     </div>
-    <p class="testi-text">"I'm writing this from the middle of the ocean — on a cruise — where for the first time in probably five years, I didn't spend my entire vacation working. Thanks to Carolyn helping me create a business model that not only doesn't kill me, but that I actually like."</p>
   </div>
 </section>
 
@@ -1260,8 +1272,8 @@ footer a { color: var(--gray-mid); text-decoration: underline; }
   <div class="not-for">
     <ul class="not-list">
       <li>You're below $100K in annual revenue. The offer design problems at your stage are different. This isn't built for them.</li>
-      <li>Your primary revenue comes from physical products. WTF is built for service-based expertise offers.</li>
-      <li>You want every minute of attention to yourself. Eight founders means eight hot seats. You're a participant, not the only one.</li>
+      <li>Your primary revenue comes from physical products. WTF is built for expertise-driven offers.</li>
+      <li>You want every minute of attention to yourself. Six founders means six hot seats. You're a participant, not the only one.</li>
     </ul>
   </div>
 
